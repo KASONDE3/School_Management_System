@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Enter Results</title>
+</head>
+<body>
+    <h1>Enter Results for Classroom {{ classroom_id }}</h1>
+    <form method="post">
+        <label for="subject_id">Select Subject:</label>
+        <select id="subject_id" name="subject_id" required>
+            {% for subject in subjects %}
+                <option value="{{ subject[0] }}">{{ subject[0] }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="ts_number">Enter Teacher ID:</label>
+        <input type="text" id="ts_number" name="ts_number" required><br><br>
+
+        <table>
+            <tr> 
+                <th>Exam number</th>
+                <th>Marks</th>
+            </tr>
+            {% for pupil in pupils %}
+            <tr>
+                <td>{{ pupil[0] }}</td>
+                <td>
+                    <input type="hidden" name="exam_number" value="{{ pupil[0] }}"> 
+                    <input type="text" name="marks_{{ pupil[0] }}" required>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Submit Results">
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

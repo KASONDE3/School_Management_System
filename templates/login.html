@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>School Name</h1>
+        <form method="post" action="{{ url_for('login') }}">
+            <h3>Results Management System</h3>
+            <h3>User login</h3>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+            <input type="submit" value="login">
+            <br>
+            <b><a href="{{ url_for('login_user')}}">Login as Teacher</a></b>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER PUPIL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Logo</span>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}"> Home</a></li>
+            <li><a href="{{ url_for('p_dash') }}">Dashboard</a><li>
+            <li><a href="{{ url_for('display_pupils') }}">List Pupil</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>    
+      </nav> 
+
+    <div class="container-1">
+        <h1>Register Pupil </h1>
+        <form method="POST" action="/add_pupil">
+            <label for="exam_number">Exam number</label>
+            <input type="text" id="exam_number" name="exam_number" required> <br><br>
+     
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required> <br><br>
+     
+            <label for="other_names">Other Name:</label>
+            <input type="text" id="other_names" name="other_names" ><br><br>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required> <br><br>
+            
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" required><br><br>
+
+            <label for="dob">DOB:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="guardian_fn">Parent/Guardian First Name: </label>
+            <input type="text" id="guardian_fn" name="guardian_fn" required><br><br>
+
+            <label for="phone">Parent/Guardian Last Name: </label>
+            <input type="text" id="guardian_ln" name="guardian_ln" required><br><br>
+            
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required><br><br>
+
+            <label for="classroom_id">Classroom:</label>
+            <select id="classroom_id" name="classroom_id" required>
+            {% for classroom in classrooms %}
+                <option value="{{ classroom[0] }}">{{ classroom[1] }}</option>
+            {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

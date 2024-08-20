@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER SUBJECT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Logo</span>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}"> Home</a></li>
+            <li><a href="{{ url_for('display_subjects') }}">List Subjects</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>  
+      </nav> 
+
+    <div class="container-1">
+        <h1>Register Subject </h1>
+        <form method="POST" action="/add_subject">
+            <label for="subject_id">Enter Subject Title </label>
+            <input type="text" id="subject_id" name="subject_id" required> <br><br>
+     
+
+            <input type="submit" value="Register">
+        </form>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

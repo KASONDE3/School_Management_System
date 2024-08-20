@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>School Name</h1>
+    <form method="post" action="{{ url_for('login_user') }}">
+        <h3>Results Management System </h3>
+        <h3>User Login</h3>
+        <label for="ts_number">TS Number:</label>
+        <input type="text" name="ts_number" required>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+        <br></br>
+        <b> <a href="{{ url_for('login') }}">Back</a></b>
+    
+    </form>
+</body>
+</html>

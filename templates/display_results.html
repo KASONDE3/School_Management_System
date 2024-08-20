@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Pupils</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>List of Pupils and results in </h1>
+    <h1>Download Results Overview</h1>
+    <center><a href="/pdf" class="download-button" download>
+        <button >Download PDF</button></center>
+        <br>
+        
+    <table>
+        <thead>
+            <tr>
+                <th>Result ID</th>
+                <th>Exam Number</th>
+                <th>Test 1</th>
+                <th>Test 2</th>
+                <th>End of term</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for results in results %}
+            <tr>
+                <td>{{ results[0] }}</td>
+                <td>{{ results[1] }}</td>
+                <td>{{ results[2] }}</td>
+                <td>{{ results[3] }}</td>
+                <td>{{ results[4] }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+</body>
+</html>

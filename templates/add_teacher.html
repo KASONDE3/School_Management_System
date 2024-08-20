@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER teacher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Logo</span>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}"> Home</a></li>
+            <li><a href="{{ url_for('p_dash') }}">Dashboard</a><li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>    
+      </nav>
+
+    <div class="container-1">
+        <h1>Register Teacher</h1>
+        <form method="POST" action="/add_teacher">
+            <label for="ts_number">TS number</label>
+            <input type="text" id="ts_number" name="ts_number" required> <br><br>
+     
+            <label for="first_name">First Name:</label>
+            <input type="text" id="f_name" name="f_name" required> <br><br>
+     
+            <label for="l_name">Last Name:</label>
+            <input type="text" id="l_name" name="l_name" required> <br><br>
+            
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" required><br><br>
+
+            <label for="nrc">NRC:</label>
+            <input type="text" id="nrc" name="nrc" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

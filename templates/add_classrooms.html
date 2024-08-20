@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER CLASSROOOMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Logo</span>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}"> Home</a></li>
+            <li><a href="{{ url_for('classroom_dash') }}">Dashboard</a><li>
+            <li><a href="{{ url_for('display_pupils') }}">List Pupil</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>  
+      </nav> 
+
+    <div class="container-1">
+        <h1>Register Classroom </h1>
+        <form method="POST" action="/add_classrooms">
+            <label for="name">Enter Classroom name </label>
+            <input type="text" id="name" name="name" required> <br><br>
+     
+
+            <input type="submit" value="Register">
+        </form>
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

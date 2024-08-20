@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Edit Subject</title>
+</head>
+<body>
+    <h1>Edit Subject</h1>
+    
+    <form method="post">
+        <label for="new_subject_id">New Subject ID:</label>
+        <input type="text" id="new_subject_id" name="new_subject_id" value="{{ subject[0] }}" required><br><br>
+        
+        <input type="submit" value="Update">
+    </form>
+    
+    <a href="{{ url_for('display_subjects') }}">Back to Subjects</a>
+</body>
+</html>

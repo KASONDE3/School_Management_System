@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Pupil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Pupil</h1>
+    <form action="{{ url_for('update_pupil', exam_number=pupil['exam_number']) }}" method="POST">
+        <input type="hidden" name="exam_number" value="{{ pupil['exam_number'] }}">
+
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" value="{{ pupil['first_name'] }}">
+
+        <label for="other_names">Other Names</label>
+        <input type="text" id="other_names" name="other_names" value="{{ pupil['other_names'] }}">
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" value="{{ pupil['last_name'] }}">
+
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender" value="{{ pupil['gender'] }}">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" value="{{ pupil['dob'] }}">
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" value="{{ pupil['address'] }}">
+
+        <label for="guardian_fn">Guardian's First Name</label>
+        <input type="text" id="guardian_fn" name="guardian_fn" value="{{ pupil['guardian_fn'] }}">
+
+        <label for="guardian_ln">Guardian's Last Name</label>
+        <input type="text" id="guardian_ln" name="guardian_ln" value="{{ pupil['guardian_ln'] }}">
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" value="{{ pupil['phone'] }}">
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

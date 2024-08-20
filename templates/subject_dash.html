@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subject dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <nav>
+            <span class="logo">Logo</span>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}"> Home</a></li>
+                <li><a href="{{ url_for('display_subjects') }}">Subjects</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                
+            </ul> 
+          </nav>
+          <br>
+          <h1>TEACHER DASHBOARD</h1>
+  <div class="container">
+    <!-- Row 1 -->
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>ADD SUBJECT</h3>
+                <button class="custom-button"><a href="{{ url_for('add_subject') }}">Click Here</a></button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>VIEW SUBJECTS</h3>
+                <button class="custom-button"><a href="{{ url_for('display_subjects') }}">Click Here</a></button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>PLACE HOLDER</h3>
+                <button class="custom-button"><a href="{{ url_for('subject_dash') }}">Click Here</a></button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Row 2 -->
+    <!-- For future use 
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Card 4</h3>
+                <button class="custom-button">Click Here</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>Card 5</h3>
+                <button class="custom-button">Click Here</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3>Card 6</h3>
+                <button class="custom-button">Click Here</button>
+            </div>
+        </div>
+    </div>-->
+</div>
+    </body> 
+</html>

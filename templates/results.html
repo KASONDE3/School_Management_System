@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <table>
+        <tr>
+            <th>Pupil Name</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+            <th>Marks</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+            <td>{{ result[2] }}</td>
+            <td>{{ result[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>

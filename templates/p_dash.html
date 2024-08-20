@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupil Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav>
+    <span class="logo">Logo</span>
+    <ul>
+        <li><a href="{{ url_for('dashboard')}}"> Home</a></li>
+		<li><a href="{{ url_for('display_pupils')}}">Pupil List</a></li>
+		<li><a href="{{ url_for('add_pupil')}}"> Register </a></li>
+  </nav>
+  <br>
+  <h1>PUPIL DASHBOARD</h1>
+    <div class="container">
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>PUPIL REGISTRATION</h3>
+                    <button class="custom-button"><a href="{{ url_for('add_pupil') }}">Click Here</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>VIEW PUPILS</h3>
+                    <button class="custom-button"><a href="{{ url_for('display_pupils') }}">Click Here</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>RESULTS</h3>
+                    <button class="custom-button"><a href="{{ url_for('results_dash') }}">Click Here</a></button>
+                </div>
+            </div>
+        </div>
+        <!-- Row 2 -->
+         <!--
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <h3>TEACHERS</h3>
+                    <button class="custom-button"><a href="{{ url_for('t_dash') }}">Click Here</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>SUBJECTS</h3>
+                    <button class="custom-button"><a href="{{ url_for('subject_dash') }}">Click Here</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h3>ADMIN</h3>
+                    <button class="custom-button"><a href="{{ url_for('admin_dash') }}">Click Here</a></button>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Report Card</title>
+</head>
+<body>
+    <!--
+    <h1>Report Card for {{ report[0][0] }}</h1>
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Actions</th>
+        </tr>
+        {% for entry in report %}
+        <tr>
+            <td>{{ entry[1] }}</td>
+            <td>{{ entry[2] }}</td>
+            <td>
+                <a href="{{ url_for('edit_result', exam_number=entry[0], subject_id=entry[1]) }}">
+                    <button>Edit</button>
+                </a>
+                <form action="{{ url_for('delete_result', exam_number=entry[0], subject_id=entry[1]) }}" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+-->
+    <a href="/">Back to Home</a>
+</body>
+</html>
